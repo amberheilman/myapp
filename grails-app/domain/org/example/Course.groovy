@@ -4,7 +4,6 @@ class Course {
 	String name
 	Integer number
 	String professor
-	//List<Assignment> Assignments
 	
 	static hasMany = [assignments: Assignment]
 	
