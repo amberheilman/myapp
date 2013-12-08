@@ -1,5 +1,4 @@
 <@ page contentType="text/html;charset=UTF-8" >
-<@ page contentType="text/html;charset=UTF-8" >
 <html xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
     <head>
         <meta name="layout" content="main"/>
@@ -7,22 +6,30 @@
     </head>
     <body>      
 	      <header>
-	          <h3>Course <small>Assignment List</small></h3>
 	      </header>
-                    <div>
-                        <g:link action="create">
-                            Create New Course
-                        </g:link>
-                        
-                    </div>
+               <div class="nav">
+               		<ul>
+                    <li><g:link action="create">Create New Course</g:link></li>
+                    <li><g:link action="list"> View Course List </g:link></li>     
+                    </ul>    
+               </div>
+               <div>
+	               <h1>My Assignments</h1>
+	               <g:each in="${Assignment}">
+	               <p>Name:${it.name}</p>
+	               <p>Description:${it.desc}</p>
+	               <p>Due Date:${it.dueDate}</p>
+				   </g:each>
+				   
+				   <g:each in="${Course}" var="course">
+				   ${courses.all }
+				   </g:each>
+				   ${courses.list() }
+				   
+               </div>
                     
-                    <div>
-                        <g:each in="${courseList}" var="p">
- 							<li>${p}</li>
-						</g:each>
-                        </div>
-                           
-        <g:javascript  library="application"/>
+               <g:javascript library="application"/>
+                        
         <r:layoutResources/>
     </body>
 </html>

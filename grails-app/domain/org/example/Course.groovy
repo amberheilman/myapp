@@ -2,7 +2,7 @@ package org.example
 
 class Course {
 	String name
-	Integer number
+	Integer section
 	String professor
 	
 	static hasMany = [assignments: Assignment]
@@ -10,8 +10,12 @@ class Course {
 
     static constraints = {
 		name(blank:false)
-		number(blank:false)
+		section(blank:false)
     }
 	
-	String toString(){ return "${name} ${number}"}
+	def show() {
+		[courses : Course.get(params.id)]
+	}
+	
+	String toString(){ return "${name} ${section}"}
 }
