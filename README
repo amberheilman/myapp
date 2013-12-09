@@ -1,0 +1,13 @@
+Installation Instructions
+============================
+Method 1:
+	1. git clone
+	2. cp war file in myapp/target/myapp-0.1.war
+	3. place in tomcat webapps/ folder
+	4. run tomcat and go to http://localhost:8080/myapp-0.1/
+	
+Method 2 (Grails installation required):
+	1. git clone
+	2. cd into main myapp directory
+	3. open cmd and type grails run-app
+	4. go to http://localhost:8080/myapp/
